@@ -2,8 +2,13 @@
 
 // MARK: - Matching
 
-public func assertMatch<T, U>(@autoclosure expression1: () -> T?, match: (T, U) -> Bool, @autoclosure expression2: () -> U?, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	return assertExpected(expression1(), match, expression2(), message, file, line)
+/// Asserts that a binary function matches two operands.
+///
+/// This is useful for asserting the equality of collections which only define equality for Equatable element types.
+///
+///		assert(x, ==, y)
+public func assert<T, U>(@autoclosure expression1: () -> T?, test: (T, U) -> Bool, @autoclosure expression2: () -> U?, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
+	return assertExpected(expression1(), test, expression2(), message, file, line)
 }
 
 
