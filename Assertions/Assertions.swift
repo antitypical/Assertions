@@ -56,7 +56,7 @@ public func assertNil<T>(@autoclosure expression: () -> T?, _ message: String = 
 
 /// Asserts that a value is not nil.
 public func assertNotNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	return assertPredicate(expression(), { $0 != nil}, "is nil. " + message, file, line)
+	return assertPredicate(expression(), { $0 != nil }, "is nil. " + message, file, line)
 }
 
 
