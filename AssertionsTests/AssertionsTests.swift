@@ -1,5 +1,22 @@
 //  Copyright (c) 2015 Rob Rix. All rights reserved.
 
+import Assertions
 import XCTest
 
-final class AssertionsTests: XCTestCase {}
+final class AssertionsTests: XCTestCase {
+	func testAssertingWithOptionalArrays() {
+		let array: [Int]? = [1, 2, 3]
+		assert(array, ==, [1, 2, 3])
+//		XCTAssertEqual(array, [1, 2, 3]) // => error: value of optional type '[Int]?' not unwrapped; did you mean to use '!' or '?'?
+	}
+
+	func testAssertingWithOptionalStrings() {
+		let string: String? = "hello"
+		assert(string, ==, "hello")
+//		XCTAssertEqual(string, "hello") // => error: cannot find an overload for 'XCTAssertEqual' that accepts an argument list of type '(String?, String)'
+	}
+
+	func testAssertingWithMethods() {
+		assert(Set([1, 2, 3]), Set.contains, 3)
+	}
+}
