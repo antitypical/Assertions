@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D4F1C3FE1A8FE39F0087648A /* Assertions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4F1C3FD1A8FE39F0087648A /* Assertions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D4F1C4001A8FE39F0087648A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D4F1C3FF1A8FE39F0087648A /* .gitignore */; };
-		D4F1C4031A8FE39F0087648A /* Assertions.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = D4F1C4021A8FE39F0087648A /* Assertions.xcworkspace */; };
 		D4F1C4091A8FE39F0087648A /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1C3F81A8FE39F0087648A /* Assertions.framework */; };
 		D4F1C4101A8FE39F0087648A /* AssertionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */; };
 /* End PBXBuildFile section */
@@ -28,9 +26,6 @@
 		D4F1C3F81A8FE39F0087648A /* Assertions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Assertions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1C3FC1A8FE39F0087648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F1C3FD1A8FE39F0087648A /* Assertions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assertions.h; sourceTree = "<group>"; };
-		D4F1C3FF1A8FE39F0087648A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
-		D4F1C4011A8FE39F0087648A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		D4F1C4021A8FE39F0087648A /* Assertions.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Assertions.xcworkspace; sourceTree = SOURCE_ROOT; };
 		D4F1C4081A8FE39F0087648A /* AssertionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssertionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1C40E1A8FE39F0087648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionsTests.swift; sourceTree = "<group>"; };
@@ -77,9 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				D4F1C3FD1A8FE39F0087648A /* Assertions.h */,
-				D4F1C3FF1A8FE39F0087648A /* .gitignore */,
-				D4F1C4011A8FE39F0087648A /* LICENSE */,
-				D4F1C4021A8FE39F0087648A /* Assertions.xcworkspace */,
 				D4F1C3FB1A8FE39F0087648A /* Supporting Files */,
 			);
 			path = Assertions;
@@ -200,8 +192,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F1C4001A8FE39F0087648A /* .gitignore in Resources */,
-				D4F1C4031A8FE39F0087648A /* Assertions.xcworkspace in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
