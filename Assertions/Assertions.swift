@@ -30,12 +30,12 @@ public func assertEqual<T: Hashable, U: Equatable>(@autoclosure expression1: () 
 
 /// Asserts that a value is nil.
 public func assertNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> Bool {
-	return expression().map { failure("\($0) is not nil. " + message, file: file, line: line) } ?? true
+	return assertPredicate(expression(), { $0 == nil }, "is not nil.", file, line) == nil
 }
 
 /// Asserts that a value is not nil.
 public func assertNotNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	return expression() ?? failure("is nil. " + message, file: file, line: line)
+	return assertPredicate(expression(), { $0 != nil}, "is nil. " + message, file, line)
 }
 
 
@@ -59,6 +59,10 @@ public func failure(message: String, file: String = __FILE__, line: UInt = __LIN
 
 
 // MARK: - Implementation details
+
+private func assertPredicate<T>(actual: T?, predicate: T? -> Bool, message: String, file: String, line: UInt) -> T? {
+	return predicate(actual) ? actual : failure(message, file: file, line: line)
+}
 
 private func assertExpected<T>(actual: T?, match: (T, T) -> Bool, expected: T?, message: String, file: String, line: UInt) -> T? {
 	switch (actual, expected) {
