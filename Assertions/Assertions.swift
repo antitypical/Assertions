@@ -1,5 +1,12 @@
 //  Copyright (c) 2014 Rob Rix. All rights reserved.
 
+// MARK: - Matching
+
+public func assertMatch<T, U>(@autoclosure expression1: () -> T?, match: (T, U) -> Bool, @autoclosure expression2: () -> U?, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
+	return assertExpected(expression1(), match, expression2(), message, file, line)
+}
+
+
 // MARK: - Equality
 
 /// Asserts the equality of two Equatable values.
