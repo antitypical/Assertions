@@ -64,7 +64,7 @@ private func assertPredicate<T>(actual: T?, predicate: T? -> Bool, message: Stri
 	return predicate(actual) ? actual : failure(message, file: file, line: line)
 }
 
-private func assertExpected<T>(actual: T?, match: (T, T) -> Bool, expected: T?, message: String, file: String, line: UInt) -> T? {
+private func assertExpected<T, U>(actual: T?, match: (T, U) -> Bool, expected: U?, message: String, file: String, line: UInt) -> T? {
 	switch (actual, expected) {
 	case (.None, .None):
 		return actual
