@@ -10,6 +10,7 @@
 		D4F1C3FE1A8FE39F0087648A /* Assertions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4F1C3FD1A8FE39F0087648A /* Assertions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4F1C4091A8FE39F0087648A /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1C3F81A8FE39F0087648A /* Assertions.framework */; };
 		D4F1C4101A8FE39F0087648A /* AssertionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */; };
+		D4F1C41A1A8FE3F00087648A /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C4191A8FE3F00087648A /* Assertions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		D4F1C4081A8FE39F0087648A /* AssertionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssertionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1C40E1A8FE39F0087648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionsTests.swift; sourceTree = "<group>"; };
+		D4F1C4191A8FE3F00087648A /* Assertions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F1C3FD1A8FE39F0087648A /* Assertions.h */,
+				D4F1C4191A8FE3F00087648A /* Assertions.swift */,
 				D4F1C3FB1A8FE39F0087648A /* Supporting Files */,
 			);
 			path = Assertions;
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F1C41A1A8FE3F00087648A /* Assertions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
