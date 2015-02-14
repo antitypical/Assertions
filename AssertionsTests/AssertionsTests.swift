@@ -19,4 +19,8 @@ final class AssertionsTests: XCTestCase {
 	func testAssertingWithMethods() {
 		assert(Set([1, 2, 3]), Set.contains, 3)
 	}
+
+	func testAssertingPropertyWithPredicate() {
+		assert("", { $0.isEmpty })
+	}
 }
