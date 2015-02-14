@@ -1,5 +1,13 @@
 //  Copyright (c) 2014 Rob Rix. All rights reserved.
 
+// MARK: - Equality
+
+func assertEqual<T: Equatable>(@autoclosure expression1: () -> T?, @autoclosure expression2: () -> T?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> T? {
+	let (actual, expected) = (expression1(), expression2())
+	return actual == expected ? actual : failure("\(actual) is not equal to \(expected). " + message, file: file, line: line)
+}
+
+
 // MARK: - Nil/non-nil
 
 func assertNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> Bool {
