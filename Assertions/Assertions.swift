@@ -6,8 +6,7 @@
 ///
 /// Returns the value, if equal and non-nil.
 public func assertEqual<T: Equatable>(@autoclosure expression1: () -> T?, @autoclosure expression2: () -> T?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> T? {
-	let (actual, expected) = (expression1(), expression2())
-	return actual == expected ? actual : failure("\(actual) is not equal to \(expected). " + message, file: file, line: line)
+	return assertEqual(expression1(), { $0 == $1 }, expression2(), message, file, line)
 }
 
 
@@ -15,15 +14,7 @@ public func assertEqual<T: Equatable>(@autoclosure expression1: () -> T?, @autoc
 ///
 /// Returns the array, if equal and non-nil.
 public func assertEqual<T: Equatable>(@autoclosure expression1: () -> [T]?, @autoclosure expression2: () -> [T]?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> [T]? {
-	let (actual, expected) = (expression1(), expression2())
-	switch (actual, expected) {
-	case (.None, .None):
-		return actual
-	case let (.Some(x), .Some(y)) where x == y:
-		return actual
-	default:
-		return failure("\(actual) is not equal to \(expected). " + message, file: file, line: line)
-	}
+	return assertEqual(expression1(), ==, expression2(), message, file, line)
 }
 
 
@@ -31,15 +22,7 @@ public func assertEqual<T: Equatable>(@autoclosure expression1: () -> [T]?, @aut
 ///
 /// Returns the dictionary, if equal and non-nil.
 public func assertEqual<T: Hashable, U: Equatable>(@autoclosure expression1: () -> [T: U]?, @autoclosure expression2: () -> [T: U]?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> [T: U]? {
-	let (actual, expected) = (expression1(), expression2())
-	switch (actual, expected) {
-	case (.None, .None):
-		return actual
-	case let (.Some(x), .Some(y)) where x == y:
-		return actual
-	default:
-		return failure("\(actual) is not equal to \(expected). " + message, file: file, line: line)
-	}
+	return assertEqual(expression1(), ==, expression2(), message, file, line)
 }
 
 
