@@ -81,8 +81,8 @@ public func failure(message: String, file: String = __FILE__, line: UInt = __LIN
 
 // MARK: - Implementation details
 
-private func assertPredicate<T>(actual: T?, predicate: T? -> Bool, message: String, file: String, line: UInt) -> T? {
-	return predicate(actual) ? actual : failure(message, file: file, line: line)
+private func assertPredicate<T>(actual: T?, predicate: T -> Bool, message: String, file: String, line: UInt) -> T? {
+	return actual.map { predicate($0) ? actual : nil } ?? failure(message, file: file, line: line)
 }
 
 private func assertExpected<T, U>(actual: T?, match: (T, U) -> Bool, expected: U?, message: String, file: String, line: UInt) -> T? {
