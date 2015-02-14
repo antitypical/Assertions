@@ -20,6 +20,15 @@ public func assert<T, U>(@autoclosure expression1: () -> T?, test: T -> U -> Boo
 	return assertExpected(expression1(), { x, y in test(x)(y) }, expression2(), message, file, line)
 }
 
+/// Asserts the truth of a predicate applied to a value.
+///
+/// This is useful for asserting that a value has some property or other.
+///
+///		assert("", { $0.isEmpty })
+public func assert<T>(@autoclosure expression: () -> T?, test: T -> Bool, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
+	return assertPredicate(expression(), test, message, file, line)
+}
+
 
 // MARK: - Equality
 
