@@ -8,6 +8,18 @@ func assertEqual<T: Equatable>(@autoclosure expression1: () -> T?, @autoclosure 
 }
 
 
+func assertEqual<T: Equatable>(@autoclosure expression1: () -> [T]?, @autoclosure expression2: () -> [T]?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> [T]? {
+	let (actual, expected) = (expression1(), expression2())
+	switch (actual, expected) {
+	case (.None, .None):
+		return actual
+	case let (.Some(x), .Some(y)) where x == y:
+		return actual
+	default:
+		return failure("\(actual) is not equal to \(expected). " + message, file: file, line: line)
+	}
+}
+
 // MARK: - Nil/non-nil
 
 func assertNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> Bool {
