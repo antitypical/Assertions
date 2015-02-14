@@ -17,10 +17,12 @@ final class AssertionsTests: XCTestCase {
 	}
 
 	func testAssertingWithMethods() {
-		assert(Set([1, 2, 3]), Set.contains, 3)
+		let set: Set<Int>? = Set([1, 2, 3])
+		assert(set, Set.contains, 3)
 	}
 
 	func testAssertingPropertyWithPredicate() {
-		assert("", { $0.isEmpty })
+		let string: String? = ""
+		assert(string, { $0.isEmpty })
 	}
 }
