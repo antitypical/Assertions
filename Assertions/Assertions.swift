@@ -77,8 +77,7 @@ public func failure(message: String, file: String = __FILE__, line: UInt = __LIN
 
 // MARK: - Implementation details
 
-private func assertEqual<T>(@autoclosure expression1: () -> T?, equal: (T, T) -> Bool, @autoclosure expression2: () -> T?, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	let (actual, expected) = (expression1(), expression2())
+private func assertEqual<T>(actual: T?, equal: (T, T) -> Bool, expected: T?, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
 	switch (actual, expected) {
 	case (.None, .None):
 		return actual
