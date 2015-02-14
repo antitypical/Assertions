@@ -75,6 +75,21 @@ public func failure(message: String, file: String = __FILE__, line: UInt = __LIN
 }
 
 
+// MARK: - Implementation details
+
+private func assertEqual<T>(@autoclosure expression1: () -> T?, equal: (T, T) -> Bool, @autoclosure expression2: () -> T?, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
+	let (actual, expected) = (expression1(), expression2())
+	switch (actual, expected) {
+	case (.None, .None):
+		return actual
+	case let (.Some(x), .Some(y)) where equal(x, y):
+		return actual
+	default:
+		return failure("\(actual) is not equal to \(expected). " + message, file: file, line: line)
+	}
+}
+
+
 // MARK: - Imports
 
 import XCTest
