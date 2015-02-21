@@ -60,7 +60,7 @@ public func assertEqual<T: Hashable, U: Equatable>(@autoclosure expression1: () 
 
 /// Asserts that a value is nil.
 public func assertNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> Bool {
-	return assertPredicate(expression(), { $0 == nil }, "is not nil. " + message, file, line) == nil
+	return expression().map { failure("\($0) is not nil. " + message, file: file, line: line) } ?? true
 }
 
 /// Asserts that a value is not nil.
