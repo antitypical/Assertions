@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
-               BuildableName = "Assertions-iOS.framework"
+               BuildableName = "Assertions.framework"
                BlueprintName = "Assertions-iOS"
                ReferencedContainer = "container:Assertions.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
-            BuildableName = "Assertions-iOS.framework"
+            BuildableName = "Assertions.framework"
             BlueprintName = "Assertions-iOS"
             ReferencedContainer = "container:Assertions.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
-            BuildableName = "Assertions-iOS.framework"
+            BuildableName = "Assertions.framework"
             BlueprintName = "Assertions-iOS"
             ReferencedContainer = "container:Assertions.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
-            BuildableName = "Assertions-iOS.framework"
+            BuildableName = "Assertions.framework"
             BlueprintName = "Assertions-iOS"
             ReferencedContainer = "container:Assertions.xcodeproj">
          </BuildableReference>
