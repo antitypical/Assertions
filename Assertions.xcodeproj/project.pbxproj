@@ -119,9 +119,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D4F1C3F71A8FE39F0087648A /* Assertions */ = {
+		D4F1C3F71A8FE39F0087648A /* Assertions-Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4F1C4131A8FE39F0087648A /* Build configuration list for PBXNativeTarget "Assertions" */;
+			buildConfigurationList = D4F1C4131A8FE39F0087648A /* Build configuration list for PBXNativeTarget "Assertions-Mac" */;
 			buildPhases = (
 				D4F1C3F31A8FE39F0087648A /* Sources */,
 				D4F1C3F41A8FE39F0087648A /* Frameworks */,
@@ -132,14 +132,14 @@
 			);
 			dependencies = (
 			);
-			name = Assertions;
+			name = "Assertions-Mac";
 			productName = Assertions;
 			productReference = D4F1C3F81A8FE39F0087648A /* Assertions.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D4F1C4071A8FE39F0087648A /* AssertionsTests */ = {
+		D4F1C4071A8FE39F0087648A /* Assertions-MacTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4F1C4161A8FE39F0087648A /* Build configuration list for PBXNativeTarget "AssertionsTests" */;
+			buildConfigurationList = D4F1C4161A8FE39F0087648A /* Build configuration list for PBXNativeTarget "Assertions-MacTests" */;
 			buildPhases = (
 				D4F1C4041A8FE39F0087648A /* Sources */,
 				D4F1C4051A8FE39F0087648A /* Frameworks */,
@@ -150,7 +150,7 @@
 			dependencies = (
 				D4F1C40B1A8FE39F0087648A /* PBXTargetDependency */,
 			);
-			name = AssertionsTests;
+			name = "Assertions-MacTests";
 			productName = AssertionsTests;
 			productReference = D4F1C4081A8FE39F0087648A /* AssertionsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -184,8 +184,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4F1C3F71A8FE39F0087648A /* Assertions */,
-				D4F1C4071A8FE39F0087648A /* AssertionsTests */,
+				D4F1C3F71A8FE39F0087648A /* Assertions-Mac */,
+				D4F1C4071A8FE39F0087648A /* Assertions-MacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,7 +229,7 @@
 /* Begin PBXTargetDependency section */
 		D4F1C40B1A8FE39F0087648A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D4F1C3F71A8FE39F0087648A /* Assertions */;
+			target = D4F1C3F71A8FE39F0087648A /* Assertions-Mac */;
 			targetProxy = D4F1C40A1A8FE39F0087648A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -336,7 +336,7 @@
 					"-framework",
 					XCTest,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Assertions;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -361,7 +361,7 @@
 					"-framework",
 					XCTest,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Assertions;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -411,7 +411,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4F1C4131A8FE39F0087648A /* Build configuration list for PBXNativeTarget "Assertions" */ = {
+		D4F1C4131A8FE39F0087648A /* Build configuration list for PBXNativeTarget "Assertions-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4F1C4141A8FE39F0087648A /* Debug */,
@@ -420,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4F1C4161A8FE39F0087648A /* Build configuration list for PBXNativeTarget "AssertionsTests" */ = {
+		D4F1C4161A8FE39F0087648A /* Build configuration list for PBXNativeTarget "Assertions-MacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4F1C4171A8FE39F0087648A /* Debug */,
