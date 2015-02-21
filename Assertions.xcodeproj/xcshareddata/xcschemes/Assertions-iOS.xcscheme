@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4F1C3F71A8FE39F0087648A"
-               BuildableName = "Assertions.framework"
-               BlueprintName = "Assertions-Mac"
+               BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
+               BuildableName = "Assertions-iOS.framework"
+               BlueprintName = "Assertions-iOS"
                ReferencedContainer = "container:Assertions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4F1C4071A8FE39F0087648A"
-               BuildableName = "Assertions-MacTests.xctest"
-               BlueprintName = "Assertions-MacTests"
+               BlueprintIdentifier = "D4C2EDEA1A98DD7D00054FAA"
+               BuildableName = "Assertions-iOSTests.xctest"
+               BlueprintName = "Assertions-iOSTests"
                ReferencedContainer = "container:Assertions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4F1C4071A8FE39F0087648A"
-               BuildableName = "Assertions-MacTests.xctest"
-               BlueprintName = "Assertions-MacTests"
+               BlueprintIdentifier = "D4C2EDEA1A98DD7D00054FAA"
+               BuildableName = "Assertions-iOSTests.xctest"
+               BlueprintName = "Assertions-iOSTests"
                ReferencedContainer = "container:Assertions.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4F1C3F71A8FE39F0087648A"
-            BuildableName = "Assertions.framework"
-            BlueprintName = "Assertions-Mac"
+            BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
+            BuildableName = "Assertions-iOS.framework"
+            BlueprintName = "Assertions-iOS"
             ReferencedContainer = "container:Assertions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,9 +75,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4F1C3F71A8FE39F0087648A"
-            BuildableName = "Assertions.framework"
-            BlueprintName = "Assertions-Mac"
+            BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
+            BuildableName = "Assertions-iOS.framework"
+            BlueprintName = "Assertions-iOS"
             ReferencedContainer = "container:Assertions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -93,9 +93,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4F1C3F71A8FE39F0087648A"
-            BuildableName = "Assertions.framework"
-            BlueprintName = "Assertions-Mac"
+            BlueprintIdentifier = "D4C2EDE01A98DD7D00054FAA"
+            BuildableName = "Assertions-iOS.framework"
+            BlueprintName = "Assertions-iOS"
             ReferencedContainer = "container:Assertions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
