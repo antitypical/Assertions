@@ -38,13 +38,13 @@
 		D4C2EDE11A98DD7D00054FAA /* Assertions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Assertions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C2EDE41A98DD7D00054FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C2EDE51A98DD7D00054FAA /* Assertions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assertions.h; sourceTree = "<group>"; };
-		D4C2EDEB1A98DD7D00054FAA /* AssertionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssertionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4C2EDEB1A98DD7D00054FAA /* Assertions-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assertions-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C2EDF11A98DD7D00054FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4C2EDF21A98DD7D00054FAA /* AssertionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionsTests.swift; sourceTree = "<group>"; };
 		D4F1C3F81A8FE39F0087648A /* Assertions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Assertions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1C3FC1A8FE39F0087648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F1C3FD1A8FE39F0087648A /* Assertions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assertions.h; sourceTree = "<group>"; };
-		D4F1C4081A8FE39F0087648A /* AssertionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AssertionsTests.xctest; path = "Assertions-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F1C4081A8FE39F0087648A /* Assertions-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Assertions-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F1C40E1A8FE39F0087648A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionsTests.swift; sourceTree = "<group>"; };
 		D4F1C4191A8FE3F00087648A /* Assertions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				D4F1C3F81A8FE39F0087648A /* Assertions.framework */,
-				D4F1C4081A8FE39F0087648A /* AssertionsTests.xctest */,
+				D4F1C4081A8FE39F0087648A /* Assertions-MacTests.xctest */,
 				D4C2EDE11A98DD7D00054FAA /* Assertions.framework */,
-				D4C2EDEB1A98DD7D00054FAA /* AssertionsTests.xctest */,
+				D4C2EDEB1A98DD7D00054FAA /* Assertions-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 			);
 			name = "Assertions-iOSTests";
 			productName = AssertionsTests;
-			productReference = D4C2EDEB1A98DD7D00054FAA /* AssertionsTests.xctest */;
+			productReference = D4C2EDEB1A98DD7D00054FAA /* Assertions-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D4F1C3F71A8FE39F0087648A /* Assertions-Mac */ = {
@@ -266,7 +266,7 @@
 			);
 			name = "Assertions-MacTests";
 			productName = AssertionsTests;
-			productReference = D4F1C4081A8FE39F0087648A /* AssertionsTests.xctest */;
+			productReference = D4F1C4081A8FE39F0087648A /* Assertions-MacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -656,6 +656,7 @@
 				D4C2EDF51A98DD7D00054FAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4C2EDF91A98DD7D00054FAA /* Build configuration list for PBXNativeTarget "Assertions-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -664,6 +665,7 @@
 				D4C2EDF71A98DD7D00054FAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4F1C3F21A8FE39F0087648A /* Build configuration list for PBXProject "Assertions" */ = {
 			isa = XCConfigurationList;
