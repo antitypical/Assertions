@@ -2,6 +2,7 @@
 
 This is a Swift µframework providing simple, flexible assertions for XCTest in Swift.
 
+_Requires Swift 1.2 (Xcode 6.3)_
 
 ## Use
 
