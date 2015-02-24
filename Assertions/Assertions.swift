@@ -109,8 +109,12 @@ private func assertExpected<T, U>(actual: T?, match: (T, U) -> Bool, expected: U
 		return actual
 	case let (.Some(x), .Some(y)) where match(x, y):
 		return actual
-	default:
-		return failure("\(actual) did not match \(expected). " + message, file: file, line: line)
+	case let (.Some(x), .Some(y)):
+		return failure("\(x) did not match \(y). " + message, file: file, line: line)
+	case let (.Some(x), .None):
+		return failure("\(x) did not match nil. " + message, file: file, line: line)
+	case let (.None, .Some(y)):
+		return failure("nil did not match \(y). " + message, file: file, line: line)
 	}
 }
 
