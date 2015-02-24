@@ -30,4 +30,9 @@ final class AssertionsTests: XCTestCase {
 		let x: Int? = nil
 		assert(x, ==, nil)
 	}
+
+	func testAssertingNonNilOfEquatableType() {
+		let x: Int? = 1
+		assert(x, !=, nil)
+	}
 }
