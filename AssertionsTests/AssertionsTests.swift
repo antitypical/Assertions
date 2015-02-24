@@ -25,4 +25,9 @@ final class AssertionsTests: XCTestCase {
 		let string: String? = ""
 		assert(string, { $0.isEmpty })
 	}
+
+	func testAssertingNilOfEquatableType() {
+		let x: Int? = nil
+		assert(x, ==, nil)
+	}
 }
