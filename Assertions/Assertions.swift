@@ -25,7 +25,7 @@ public func assert<T, U>(@autoclosure expression1: () -> T, test: (T, U) -> Bool
 /// This is useful for asserting that some method applies to the receiver on the left and the operand on the right.
 ///
 ///		assert(Set([ 1, 2, 3 ]), Set.contains, 3)
-public func assert<T, U>(@autoclosure expression1: () -> T?, test: T -> U -> Bool, @autoclosure expression2: () -> U?, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
+public func assert<T, U>(@autoclosure expression1: () -> T?, test: T -> U -> Bool, @autoclosure expression2: () -> U, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
 	return assertExpected(expression1(), { x, y in test(x)(y) }, expression2(), message, file, line)
 }
 
