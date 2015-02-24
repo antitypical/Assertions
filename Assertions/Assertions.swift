@@ -25,7 +25,7 @@ public func assert<T, U>(@autoclosure expression1: () -> T?, test: T -> U -> Boo
 /// This is useful for asserting that a value has some property or other.
 ///
 ///		assert("", { $0.isEmpty })
-public func assert<T>(@autoclosure expression: () -> T?, test: T -> Bool, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
+public func assert<T>(@autoclosure expression: () -> T?, message: String = "", file: String = __FILE__, line: UInt = __LINE__, test: T -> Bool) -> T? {
 	return assertPredicate(expression(), test, message, file, line)
 }
 
