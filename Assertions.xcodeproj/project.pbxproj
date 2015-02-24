@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D400DBED1A9C0747009C1318 /* AssertionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */; };
+		D400DBEE1A9C0747009C1318 /* AssertionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */; };
 		D4C2EDE61A98DD7D00054FAA /* Assertions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C2EDE51A98DD7D00054FAA /* Assertions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4C2EDEC1A98DD7D00054FAA /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C2EDE11A98DD7D00054FAA /* Assertions.framework */; };
-		D4C2EDF31A98DD7D00054FAA /* AssertionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C2EDF21A98DD7D00054FAA /* AssertionsTests.swift */; };
 		D4C2EDFA1A98DE2B00054FAA /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C4191A8FE3F00087648A /* Assertions.swift */; };
 		D4C2EDFB1A98DED000054FAA /* Assertions.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C2EDE51A98DD7D00054FAA /* Assertions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4F1C4091A8FE39F0087648A /* Assertions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4F1C3F81A8FE39F0087648A /* Assertions.framework */; };
-		D4F1C4101A8FE39F0087648A /* AssertionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C40F1A8FE39F0087648A /* AssertionsTests.swift */; };
 		D4F1C41A1A8FE3F00087648A /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F1C4191A8FE3F00087648A /* Assertions.swift */; };
 /* End PBXBuildFile section */
 
@@ -356,7 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C2EDF31A98DD7D00054FAA /* AssertionsTests.swift in Sources */,
+				D400DBEE1A9C0747009C1318 /* AssertionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F1C4101A8FE39F0087648A /* AssertionsTests.swift in Sources */,
+				D400DBED1A9C0747009C1318 /* AssertionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
