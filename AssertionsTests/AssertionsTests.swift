@@ -70,7 +70,7 @@ final class AssertionsTests: XCTestCase {
 	// MARK: Testing assertion failures
 
 	/// Assert that `test` causes an assertion failure.
-	func assertFailure(file: String = __FILE__, line: UInt = __LINE__, test: () -> ()) -> (message: String, file: String, line: UInt, expected: Bool)? {
+	func assertFailure(file: String = __FILE__, line: UInt = __LINE__, _ test: () -> ()) -> (message: String, file: String, line: UInt, expected: Bool)? {
 		let previous = expectFailure
 		expectFailure = true
 		test()
