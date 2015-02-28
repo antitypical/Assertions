@@ -1,8 +1,5 @@
 //  Copyright (c) 2015 Rob Rix. All rights reserved.
 
-import Assertions
-import XCTest
-
 final class AssertionsTests: XCTestCase {
 	func testAssertingWithOptionalArrays() {
 		let array: [Int]? = [1, 2, 3]
@@ -36,3 +33,9 @@ final class AssertionsTests: XCTestCase {
 		assert(x, !=, nil)
 	}
 }
+
+
+// MARK: - Imports
+
+import Assertions
+import XCTest
