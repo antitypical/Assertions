@@ -83,6 +83,13 @@ final class AssertionsTests: XCTestCase {
 		}
 	}
 
+	/// Workaround for http://www.openradar.me/19996972
+	func assertFailure<T>(@autoclosure expression1: () -> T, _ test: (T, T) -> Bool, @autoclosure _ expression2: () -> T, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> (message: String, file: String, line: UInt, expected: Bool)? {
+		return assertFailure {
+			assert(expression1(), test, expression2(), message: message, file: file, line: line)
+		}
+	}
+
 	private var expectFailure: Bool = false
 	private var failure: (message: String, file: String, line: UInt, expected: Bool)? = nil
 
