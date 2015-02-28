@@ -7,11 +7,27 @@ final class AssertionsTests: XCTestCase {
 //		XCTAssertEqual(array, [1, 2, 3]) // => error: value of optional type '[Int]?' not unwrapped; did you mean to use '!' or '?'?
 	}
 
+	func testAssertingWithOptionalArraysFailure() {
+		let array: [Int]? = [1, 2, 3]
+		assertFailure {
+			assert(array, ==, [1, 2, 3, 4])
+		}
+	}
+
+
 	func testAssertingWithOptionalStrings() {
 		let string: String? = "hello"
 		assert(string, ==, "hello")
 //		XCTAssertEqual(string, "hello") // => error: cannot find an overload for 'XCTAssertEqual' that accepts an argument list of type '(String?, String)'
 	}
+
+	func testAssertingWithOptionalStringsFailure() {
+		let string: String? = "hello"
+		assertFailure {
+			assert(string, ==, "hello!")
+		}
+	}
+
 
 	func testAssertingWithMethods() {
 		let set: Set<Int>? = Set([1, 2, 3])
@@ -29,6 +45,14 @@ final class AssertionsTests: XCTestCase {
 		let string: String? = ""
 		assert(string, { $0.isEmpty })
 	}
+
+	func testAssertingPropertyWithPredicateFailure() {
+		let string: String? = "1"
+		assertFailure {
+			assert(string, { $0.isEmpty })
+		}
+	}
+
 
 	func testAssertingNilOfEquatableType() {
 		let x: Int? = nil
