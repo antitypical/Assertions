@@ -36,7 +36,7 @@ final class AssertionsTests: XCTestCase {
 
 	func testAssertingWithMethodsFailure() {
 		let set: Set<Int>? = Set([1, 2, 3])
-		let observation = assertFailure {
+		assertFailure {
 			assert(set, Set.contains, 4)
 		}
 	}
