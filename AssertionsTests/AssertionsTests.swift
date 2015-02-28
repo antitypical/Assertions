@@ -41,6 +41,7 @@ final class AssertionsTests: XCTestCase {
 		}
 	}
 
+
 	func testAssertingPropertyWithPredicate() {
 		let string: String? = ""
 		assert(string, { $0.isEmpty })
