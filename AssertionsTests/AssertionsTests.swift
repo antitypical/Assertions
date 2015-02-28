@@ -60,11 +60,22 @@ final class AssertionsTests: XCTestCase {
 		assert(x, ==, nil)
 	}
 
+	func testAssertingNilOfEquatableTypeFailure() {
+		let x: Int? = 1
+		assertFailure {
+			assert(x, ==, nil)
+		}
+	}
+
 	func testAssertingNonNilOfEquatableType() {
 		let x: Int? = 1
 		assert(x, !=, nil)
 	}
 
+	func testAssertingNonNilOfEquatableTypeFailure() {
+		let x: Int? = nil
+		assertFailure(x, !=, nil)
+	}
 
 
 	// MARK: Testing assertion failures
