@@ -18,6 +18,13 @@ final class AssertionsTests: XCTestCase {
 		assert(set, Set.contains, 3)
 	}
 
+	func testAssertingWithMethodsFailure() {
+		let set: Set<Int>? = Set([1, 2, 3])
+		let observation = assertFailure {
+			assert(set, Set.contains, 4)
+		}
+	}
+
 	func testAssertingPropertyWithPredicate() {
 		let string: String? = ""
 		assert(string, { $0.isEmpty })
