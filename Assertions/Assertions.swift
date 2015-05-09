@@ -69,7 +69,7 @@ public func assertEqual<T: Hashable, U: Equatable>(@autoclosure expression1: () 
 
 /// Asserts that a value is nil.
 public func assertNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> Bool {
-	return expression().map { failure("\($0) is not nil. " + message, file: file, line: line) } ?? true
+	return expression().map { failure("\(toDebugString($0)) is not nil. " + message, file: file, line: line) } ?? true
 }
 
 /// Asserts that a value is not nil.
@@ -115,11 +115,11 @@ private func assertExpected<T, U>(actual: T?, match: (T, U) -> Bool, expected: U
 	case let (.Some(x), .Some(y)) where match(x, y):
 		return actual
 	case let (.Some(x), .Some(y)):
-		return failure("\(x) did not match \(y). " + message, file: file, line: line)
+		return failure("\(toDebugString(x)) did not match \(toDebugString(y)). " + message, file: file, line: line)
 	case let (.Some(x), .None):
-		return failure("\(x) did not match nil. " + message, file: file, line: line)
+		return failure("\(toDebugString(x)) did not match nil. " + message, file: file, line: line)
 	case let (.None, .Some(y)):
-		return failure("nil did not match \(y). " + message, file: file, line: line)
+		return failure("nil did not match \(toDebugString(y)). " + message, file: file, line: line)
 	}
 }
 
