@@ -104,7 +104,7 @@ final class AssertionsTests: XCTestCase {
 	private var expectFailure: Bool = false
 	private var failure: (message: String, file: String, line: UInt, expected: Bool)? = nil
 
-	override func recordFailureWithDescription(message: String!, inFile file: String!, atLine line: UInt, expected: Bool) {
+	override func recordFailureWithDescription(message: String, inFile file: String, atLine line: UInt, expected: Bool) {
 		if expectFailure {
 			failure = (message: message, file: file, line: line, expected: expected)
 		} else {
