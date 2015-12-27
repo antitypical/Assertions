@@ -39,22 +39,6 @@ public func assert<T>(@autoclosure expression: () throws -> T?, message: String 
 }
 
 
-// MARK: - Throws
-
-/// Asserts that an expression does not throw an error.
-///
-/// This can be combined with other assertions, enabling convenient testing of equality (or other matchers, see `assert`) without losing error messages:
-///
-///		assert(assertNoThrow(try thingThatMightFail()), ==, successValue)
-public func assertNoThrow<A>(@autoclosure test: () throws -> A, file: String = __FILE__, line: UInt = __LINE__) -> A? {
-	do {
-		return try test()
-	} catch {
-		return failure("\(error)", file: file, line: line)
-	}
-}
-
-
 // MARK: - Equality
 
 /// Asserts the equality of two Equatable values.
