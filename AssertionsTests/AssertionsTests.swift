@@ -89,6 +89,17 @@ final class AssertionsTests: XCTestCase {
 	}
 
 
+	// MARK: Throwing functions
+
+	private func getStringReturns() throws -> String {
+		return ""
+	}
+
+	private func getStringThrows() throws -> String {
+		throw NSError(domain: "com.antitypical.Assertions", code: -1, userInfo: [:])
+	}
+
+
 	// MARK: Testing assertion failures
 
 	/// Assert that `test` causes an assertion failure.
