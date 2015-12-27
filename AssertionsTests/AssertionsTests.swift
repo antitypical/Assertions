@@ -53,6 +53,11 @@ final class AssertionsTests: XCTestCase {
 		}
 	}
 
+	func testAssertingThrowingPropertyWithPredicate() {
+		func getString() throws -> String { return "" }
+		assert(try getString(), { $0.isEmpty })
+	}
+
 
 	func testAssertingNilOfEquatableType() {
 		let x: Int? = nil
