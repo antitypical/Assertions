@@ -18,7 +18,6 @@ final class AssertionsTests: XCTestCase {
 	func testAssertingWithOptionalStrings() {
 		let string: String? = "hello"
 		assert(string, ==, "hello")
-//		XCTAssertEqual(string, "hello") // => error: cannot find an overload for 'XCTAssertEqual' that accepts an argument list of type '(String?, String)'
 	}
 
 	func testAssertingWithOptionalStringsFailure() {
@@ -55,6 +54,27 @@ final class AssertionsTests: XCTestCase {
 	}
 
 
+	func testAssertingThrowingMatcher() {
+		assert(try getStringReturns(), ==, "")
+	}
+
+	func testAssertingThrowingMatcherFailure() {
+		assertFailure {
+			assert(try getStringThrows(), ==, "")
+		}
+	}
+
+	func testAssertingThrowingPropertyWithPredicate() {
+		assert(try getStringReturns(), { $0.isEmpty })
+	}
+
+	func testAssertingThrowingPropertyWithPredicateFailure() {
+		assertFailure {
+			assert(try getStringThrows(), { $0.isEmpty })
+		}
+	}
+
+
 	func testAssertingNilOfEquatableType() {
 		let x: Int? = nil
 		assert(x, ==, nil)
@@ -78,19 +98,33 @@ final class AssertionsTests: XCTestCase {
 	}
 
 
+	// MARK: Throwing functions
+
+	private func getStringReturns() throws -> String {
+		return ""
+	}
+
+	private func getStringThrows() throws -> String {
+		throw NSError(domain: "com.antitypical.Assertions", code: -1, userInfo: [:])
+	}
+
+
 	// MARK: Testing assertion failures
 
 	/// Assert that `test` causes an assertion failure.
-	func assertFailure<T>(file: String = __FILE__, line: UInt = __LINE__, @noescape _ test: () -> T) -> (message: String, file: String, line: UInt, expected: Bool)? {
-		let previous = expectFailure
-		expectFailure = true
-		test()
-		expectFailure = previous
-		if let result = failure {
-			return result
-		} else {
-			XCTFail("expected the assertion to fail", file: file, line: line)
-			return nil
+	func assertFailure<T>(file: String = __FILE__, line: UInt = __LINE__, @noescape _ test: () throws -> T) -> (message: String, file: String, line: UInt, expected: Bool)? {
+		do {
+			let previous = expectFailure
+			expectFailure = true
+			try test()
+			expectFailure = previous
+			if let result = failure {
+				return result
+			} else {
+				return Assertions.failure("expected the assertion to fail", file: file, line: line)
+			}
+		} catch {
+			return Assertions.failure("error: \(error)", file: file, line: line)
 		}
 	}
 
