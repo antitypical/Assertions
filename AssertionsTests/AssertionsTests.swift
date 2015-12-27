@@ -85,16 +85,20 @@ final class AssertionsTests: XCTestCase {
 	// MARK: Testing assertion failures
 
 	/// Assert that `test` causes an assertion failure.
-	func assertFailure<T>(file: String = __FILE__, line: UInt = __LINE__, @noescape _ test: () -> T) -> (message: String, file: String, line: UInt, expected: Bool)? {
-		let previous = expectFailure
-		expectFailure = true
-		test()
-		expectFailure = previous
-		if let result = failure {
-			return result
-		} else {
-			XCTFail("expected the assertion to fail", file: file, line: line)
-			return nil
+	func assertFailure<T>(file: String = __FILE__, line: UInt = __LINE__, @noescape _ test: () throws -> T) -> (message: String, file: String, line: UInt, expected: Bool)? {
+		do {
+			let previous = expectFailure
+			expectFailure = true
+			try test()
+			expectFailure = previous
+			if let result = failure {
+				return result
+			} else {
+				XCTFail("expected the assertion to fail", file: file, line: line)
+				return nil
+			}
+		} catch {
+			return Assertions.failure("error: \(error)", file: file, line: line)
 		}
 	}
 
