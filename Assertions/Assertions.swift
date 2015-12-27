@@ -35,7 +35,7 @@ public func assert<T, U>(@autoclosure expression1: () throws -> T?, _ test: T ->
 ///
 ///		assert("", { $0.isEmpty })
 public func assert<T>(@autoclosure expression: () -> T?, message: String = "", file: String = __FILE__, line: UInt = __LINE__, _ test: T -> Bool) -> T? {
-	return assertPredicate(expression(), test, message, file, line)
+	return assertPredicate(expression, test, message, file, line)
 }
 
 
@@ -90,7 +90,7 @@ public func assertNil<T>(@autoclosure expression: () -> T?, _ message: String = 
 
 /// Asserts that a value is not nil.
 public func assertNotNil<T>(@autoclosure expression: () -> T?, _ message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	return assertPredicate(expression(), { $0 != nil }, "is nil. " + message, file, line)
+	return assertPredicate(expression, { $0 != nil }, "is nil. " + message, file, line)
 }
 
 
@@ -115,7 +115,8 @@ public func failure(message: String, file: String = __FILE__, line: UInt = __LIN
 
 // MARK: - Implementation details
 
-private func assertPredicate<T>(actual: T?, _ predicate: T -> Bool, _ message: String, _ file: String, _ line: UInt) -> T? {
+private func assertPredicate<T>(@noescape actual: () -> T?, _ predicate: T -> Bool, _ message: String, _ file: String, _ line: UInt) -> T? {
+	let actual = actual()
 	switch actual {
 	case let .Some(x) where predicate(x):
 		return actual
