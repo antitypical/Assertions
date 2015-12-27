@@ -58,6 +58,12 @@ final class AssertionsTests: XCTestCase {
 		assert(try getStringReturns(), ==, "")
 	}
 
+	func testAssertingThrowingMatcherFailure() {
+		assertFailure {
+			assert(try getStringThrows(), ==, "")
+		}
+	}
+
 	func testAssertingThrowingPropertyWithPredicate() {
 		assert(try getStringReturns(), { $0.isEmpty })
 	}
