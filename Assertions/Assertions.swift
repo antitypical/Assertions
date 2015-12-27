@@ -41,6 +41,11 @@ public func assert<T>(@autoclosure expression: () -> T?, message: String = "", f
 
 // MARK: - Throws
 
+/// Asserts that an expression does not throw an error.
+///
+/// This can be combined with other assertions, enabling convenient testing of equality (or other matchers, see `assert`) without losing error messages:
+///
+///		assert(assertNoThrow(try thingThatMightFail()), ==, successValue)
 public func assertNoThrow<A>(@autoclosure test: () throws -> A, file: String = __FILE__, line: UInt = __LINE__) -> A? {
 	do {
 		return try test()
