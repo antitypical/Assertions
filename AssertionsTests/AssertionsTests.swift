@@ -18,7 +18,6 @@ final class AssertionsTests: XCTestCase {
 	func testAssertingWithOptionalStrings() {
 		let string: String? = "hello"
 		assert(string, ==, "hello")
-//		XCTAssertEqual(string, "hello") // => error: cannot find an overload for 'XCTAssertEqual' that accepts an argument list of type '(String?, String)'
 	}
 
 	func testAssertingWithOptionalStringsFailure() {
