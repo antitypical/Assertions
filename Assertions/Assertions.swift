@@ -8,7 +8,7 @@
 ///
 ///		assert(x, ==, y)
 public func assert<T>(@autoclosure expression1: () -> T?, _ test: (T, T) -> Bool, @autoclosure _ expression2: () -> T, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	return assertExpected(expression1(), test, expression2(), message, file, line)
+	return assertExpected(expression1, test, expression2(), message, file, line)
 }
 
 /// Asserts that a binary function matches two operands.
@@ -17,7 +17,7 @@ public func assert<T>(@autoclosure expression1: () -> T?, _ test: (T, T) -> Bool
 ///
 ///		assert(x, ==, y)
 public func assert<T, U>(@autoclosure expression1: () -> T, _ test: (T, U) -> Bool, @autoclosure _ expression2: () -> U, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	return assertExpected(expression1(), test, expression2(), message, file, line)
+	return assertExpected(expression1, test, expression2(), message, file, line)
 }
 
 /// Asserts that a curried binary function matches two operands.
@@ -26,7 +26,7 @@ public func assert<T, U>(@autoclosure expression1: () -> T, _ test: (T, U) -> Bo
 ///
 ///		assert(Set([ 1, 2, 3 ]), Set.contains, 3)
 public func assert<T, U>(@autoclosure expression1: () -> T?, _ test: T -> U -> Bool, @autoclosure _ expression2: () -> U, message: String = "", file: String = __FILE__, line: UInt = __LINE__) -> T? {
-	return assertExpected(expression1(), { x, y in test(x)(y) }, expression2(), message, file, line)
+	return assertExpected(expression1, { x, y in test(x)(y) }, expression2(), message, file, line)
 }
 
 /// Asserts the truth of a predicate applied to a value.
@@ -62,7 +62,7 @@ public func assertNoThrow<A>(@autoclosure test: () throws -> A, file: String = _
 ///
 /// Returns the value, if equal and non-nil.
 public func assertEqual<T: Equatable>(@autoclosure expression1: () -> T?, @autoclosure _ expression2: () -> T?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> T? {
-	return assertExpected(expression1(), { $0 == $1 }, expression2(), message, file, line)
+	return assertExpected(expression1, { $0 == $1 }, expression2(), message, file, line)
 }
 
 
@@ -70,7 +70,7 @@ public func assertEqual<T: Equatable>(@autoclosure expression1: () -> T?, @autoc
 ///
 /// Returns the array, if equal and non-nil.
 public func assertEqual<T: Equatable>(@autoclosure expression1: () -> [T]?, @autoclosure _ expression2: () -> [T]?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> [T]? {
-	return assertExpected(expression1(), ==, expression2(), message, file, line)
+	return assertExpected(expression1, ==, expression2(), message, file, line)
 }
 
 
@@ -78,7 +78,7 @@ public func assertEqual<T: Equatable>(@autoclosure expression1: () -> [T]?, @aut
 ///
 /// Returns the dictionary, if equal and non-nil.
 public func assertEqual<T: Hashable, U: Equatable>(@autoclosure expression1: () -> [T: U]?, @autoclosure _ expression2: () -> [T: U]?, _ message: String = "", _ file: String = __FILE__, _ line: UInt = __LINE__) -> [T: U]? {
-	return assertExpected(expression1(), ==, expression2(), message, file, line)
+	return assertExpected(expression1, ==, expression2(), message, file, line)
 }
 
 
@@ -125,7 +125,7 @@ private func assertPredicate<T>(actual: T?, _ predicate: T -> Bool, _ message: S
 	}
 }
 
-private func assertExpected<T, U>(actual: T?, _ match: (T, U) -> Bool, _ expected: U?, _ message: String, _ file: String, _ line: UInt) -> T? {
+private func assertExpected<T, U>(@noescape actual: () -> T?, _ match: (T, U) -> Bool, _ expected: U?, _ message: String, _ file: String, _ line: UInt) -> T? {
 	switch (actual, expected) {
 	case (.None, .None):
 		return actual
