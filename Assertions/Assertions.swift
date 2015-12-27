@@ -125,18 +125,23 @@ private func assertPredicate<T>(actual: T?, _ predicate: T -> Bool, _ message: S
 	}
 }
 
-private func assertExpected<T, U>(@noescape actual: () -> T?, _ match: (T, U) -> Bool, _ expected: U?, _ message: String, _ file: String, _ line: UInt) -> T? {
-	switch (actual, expected) {
-	case (.None, .None):
-		return actual
-	case let (.Some(x), .Some(y)) where match(x, y):
-		return actual
-	case let (.Some(x), .Some(y)):
-		return failure("\(String(reflecting: x)) did not match \(String(reflecting: y)). " + message, file: file, line: line)
-	case let (.Some(x), .None):
-		return failure("\(String(reflecting: x)) did not match nil. " + message, file: file, line: line)
-	case let (.None, .Some(y)):
-		return failure("nil did not match \(String(reflecting: y)). " + message, file: file, line: line)
+private func assertExpected<T, U>(@noescape actual: () throws -> T?, _ match: (T, U) -> Bool, _ expected: U?, _ message: String, _ file: String, _ line: UInt) -> T? {
+	do {
+		let actual = try actual()
+		switch (actual, expected) {
+		case (.None, .None):
+			return actual
+		case let (.Some(x), .Some(y)) where match(x, y):
+			return actual
+		case let (.Some(x), .Some(y)):
+			return failure("\(String(reflecting: x)) did not match \(String(reflecting: y)). " + message, file: file, line: line)
+		case let (.Some(x), .None):
+			return failure("\(String(reflecting: x)) did not match nil. " + message, file: file, line: line)
+		case let (.None, .Some(y)):
+			return failure("nil did not match \(String(reflecting: y)). " + message, file: file, line: line)
+		}
+	} catch {
+		return failure("caught error: '\(error)' \(message)", file: file, line: line)
 	}
 }
 
