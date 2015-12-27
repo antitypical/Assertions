@@ -54,14 +54,12 @@ final class AssertionsTests: XCTestCase {
 	}
 
 	func testAssertingThrowingPropertyWithPredicate() {
-		func getString() throws -> String { return "" }
-		assert(try getString(), { $0.isEmpty })
+		assert(try getStringReturns(), { $0.isEmpty })
 	}
 
 	func testAssertingThrowingPropertyWithPredicateFailure() {
-		func getString() throws -> String { throw NSError(domain: "com.antitypical.Assertions", code: -1, userInfo: [:]) }
 		assertFailure {
-			assert(try getString(), { $0.isEmpty })
+			assert(try getStringThrows(), { $0.isEmpty })
 		}
 	}
 
