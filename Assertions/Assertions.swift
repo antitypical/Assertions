@@ -115,13 +115,17 @@ public func failure(message: String, file: String = __FILE__, line: UInt = __LIN
 
 // MARK: - Implementation details
 
-private func assertPredicate<T>(@noescape actual: () -> T?, _ predicate: T -> Bool, _ message: String, _ file: String, _ line: UInt) -> T? {
-	let actual = actual()
-	switch actual {
-	case let .Some(x) where predicate(x):
-		return actual
-	default:
-		return failure(message, file: file, line: line)
+private func assertPredicate<T>(@noescape actual: () throws -> T?, _ predicate: T -> Bool, _ message: String, _ file: String, _ line: UInt) -> T? {
+	do {
+		let actual = try actual()
+		switch actual {
+		case let .Some(x) where predicate(x):
+			return actual
+		default:
+			return failure(message, file: file, line: line)
+		}
+	} catch {
+		return failure("caught error: '\(error)' \(message)", file: file, line: line)
 	}
 }
 
