@@ -50,8 +50,7 @@ public func assertNoThrow<A>(@autoclosure test: () throws -> A, file: String = _
 	do {
 		return try test()
 	} catch {
-		failure("\(error)", file: file, line: line)
-		return nil
+		return failure("\(error)", file: file, line: line)
 	}
 }
 
