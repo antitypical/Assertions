@@ -94,8 +94,7 @@ final class AssertionsTests: XCTestCase {
 			if let result = failure {
 				return result
 			} else {
-				XCTFail("expected the assertion to fail", file: file, line: line)
-				return nil
+				return Assertions.failure("expected the assertion to fail", file: file, line: line)
 			}
 		} catch {
 			return Assertions.failure("error: \(error)", file: file, line: line)
