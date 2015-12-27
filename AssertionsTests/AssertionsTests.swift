@@ -58,6 +58,13 @@ final class AssertionsTests: XCTestCase {
 		assert(try getString(), { $0.isEmpty })
 	}
 
+	func testAssertingThrowingPropertyWithPredicateFailure() {
+		func getString() throws -> String { throw NSError(domain: "com.antitypical.Assertions", code: -1, userInfo: [:]) }
+		assertFailure {
+			assert(try getString(), { $0.isEmpty })
+		}
+	}
+
 
 	func testAssertingNilOfEquatableType() {
 		let x: Int? = nil
